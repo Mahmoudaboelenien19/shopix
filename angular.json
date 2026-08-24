@@ -23,8 +23,7 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              },
-              {}
+              }
             ],
             "styles": ["src/styles.css"],
             "server": "src/main.server.ts",

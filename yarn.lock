@@ -4528,6 +4528,7 @@ __metadata:
     "@types/node": "npm:^20.17.19"
     express: "npm:^5.1.0"
     jsdom: "npm:^28.0.0"
+    ngx-cookie-service-ssr: "npm:^22.0.0"
     postcss: "npm:^8.5.3"
     prettier: "npm:^3.8.1"
     primeng: "npm:^22.1.0"
@@ -4554,6 +4555,19 @@ __metadata:
   dependencies:
     content-type: "npm:^2.1.0"
   checksum: 10c0/656fa57de02f1a0c4c09f9e17eb78e8182547c07093e810ff8f16249b6ae31f2c546a3d457905e94f3276b25f0e2741ea1a3bc3912192932ed7e493adfea535e
+  languageName: node
+  linkType: hard
+
+"ngx-cookie-service-ssr@npm:^22.0.0":
+  version: 22.0.0
+  resolution: "ngx-cookie-service-ssr@npm:22.0.0"
+  dependencies:
+    tslib: "npm:^2.8.1"
+  peerDependencies:
+    "@angular/common": ^22.0.0
+    "@angular/core": ^22.0.0
+    "@angular/ssr": ^22.0.0
+  checksum: 10c0/65f125bd821b4d3827eff04326da70797126e237aabb0c59fca5fb3718c41c383db03d111d608d9f53e5465e4c514f8d61b4004651f808167cf2318db411ae39
   languageName: node
   linkType: hard
 

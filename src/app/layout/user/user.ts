@@ -1,4 +1,3 @@
-import { NgClass } from '@angular/common';
 import { Component, computed, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { USER_NAVIGATION } from '@app/shared/constants/navigation.constants';
@@ -6,10 +5,12 @@ import { Heart } from '@primeicons/angular/heart';
 import { ShoppingCart } from '@primeicons/angular/shopping-cart';
 import { Times } from '@primeicons/angular/times';
 import { Bars } from '@primeicons/angular/bars';
-import { LanguageTogglar } from '@app/components/shared/language-togglar/language-togglar';
+import { TranslatePipe } from '@ngx-translate/core';
+import { LanguageTogglar } from '@app/shared/components/language-togglar/language-togglar';
 
 @Component({
   imports: [
+    LanguageTogglar,
     RouterLink,
     RouterLinkActive,
     RouterOutlet,
@@ -17,7 +18,7 @@ import { LanguageTogglar } from '@app/components/shared/language-togglar/languag
     ShoppingCart,
     Times,
     Bars,
-    LanguageTogglar,
+    TranslatePipe,
   ],
   selector: 'app-user',
   styleUrl: './user.css',
