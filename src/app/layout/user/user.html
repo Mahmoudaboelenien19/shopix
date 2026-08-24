@@ -13,7 +13,7 @@
             routerLinkActive="text-blue-600"
             class="capitalize text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
           >
-            {{ item.label }}
+            {{ item.labelKey | translate }}
           </a>
         }
       </div>
@@ -50,7 +50,7 @@
             </span>
           }
         </a>
-
+        <app-language-togglar></app-language-togglar>
         <button
           (click)="toggleMenu()"
           class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none"
@@ -85,7 +85,7 @@
           routerLinkActive="text-blue-600"
           class="capitalize text-2xl text-gray-800 hover:text-blue-600 transition-colors duration-200"
         >
-          {{ item.label }}
+          {{ item.labelKey | translate }}
         </a>
       }
     </div>

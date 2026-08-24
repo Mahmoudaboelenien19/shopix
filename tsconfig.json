@@ -8,7 +8,7 @@
       "@pages/*": ["./src/app/pages/*"],
       "@layout/*": ["./src/app/layout/*"],
       "@services/*": ["./src/app/services/*"],
-      "@components/*": ["./src/app/components/*"],
+      "@shared/*": ["./src/app/shared/*"],
       "@utils/*": ["./src/app/utils/*"],
       "@env/*": ["./src/environments/*"]
     },

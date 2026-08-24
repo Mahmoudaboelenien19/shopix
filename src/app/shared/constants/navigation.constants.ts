@@ -1,5 +1,5 @@
 export const USER_NAVIGATION = [
-  { label: 'home', route: '' },
-  { label: 'products', route: '/products' },
-  { label: 'about', route: '/about' },
+  { labelKey: 'nav.home', route: '' },
+  { labelKey: 'nav.products', route: '/products' },
+  { labelKey: 'nav.about', route: '/about' },
 ];

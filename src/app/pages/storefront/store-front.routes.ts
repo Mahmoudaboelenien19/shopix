@@ -14,8 +14,8 @@ export const STORE_FRONT_ROUTES: Routes = [
     path: 'products',
     loadComponent: () => import('../storefront/products/products').then((m) => m.Products),
   },
-  {
-    path: 'product/:id',
-    loadComponent: () => import('../storefront/product/product').then((m) => m.Product),
-  },
+  // {
+  //   path: 'product/:id',
+  //   loadComponent: () => import('../storefront/product/product').then((m) => m.Product),
+  // },
 ];
