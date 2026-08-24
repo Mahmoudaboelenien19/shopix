@@ -1,0 +1,94 @@
+<nav class="bg-white shadow-md sticky top-0 z-40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a routerLink="/" class="flex items-center">
+        <img src="/logo/light.png" alt="MyApp Logo" class="h-8 w-auto" />
+      </a>
+      <!-- Desktop menu -->
+      <div class="hidden md:flex items-center gap-1">
+        @for (item of userNavigationItems(); track item.route) {
+          <a
+            [routerLink]="item.route"
+            routerLinkActive="text-blue-600"
+            class="capitalize text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+          >
+            {{ item.label }}
+          </a>
+        }
+      </div>
+
+      <!-- Right side icons -->
+      <div class="flex items-center gap-2">
+        <!-- Favorites -->
+        <a
+          routerLink="/users/fav"
+          routerLinkActive="text-red-500"
+          class="relative p-2 rounded-full text-gray-700 hover:bg-gray-100 transition-colors duration-200"
+        >
+          <svg data-p-icon="heart"></svg>
+          @if (favCount() > 0) {
+            <span
+              class="absolute -top-1 -end-1 bg-red-500 text-white text-[10px] leading-none rounded-full h-4 min-w-4 px-1 flex items-center justify-center"
+            >
+              {{ favCount() }}
+            </span>
+          }
+        </a>
+
+        <a
+          routerLink="/users/cart"
+          routerLinkActive="text-blue-600"
+          class="p-2 rounded-full text-gray-700 hover:bg-gray-100 transition-colors duration-200"
+        >
+          <svg data-p-icon="shopping-cart"></svg>
+          @if (cartCount() > 0) {
+            <span
+              class="absolute -top-1 -end-1 bg-blue-600 text-white text-[10px] leading-none rounded-full h-4 min-w-4 px-1 flex items-center justify-center"
+            >
+              {{ cartCount() }}
+            </span>
+          }
+        </a>
+
+        <button
+          (click)="toggleMenu()"
+          class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none"
+        >
+          @if (mobileOpen()) {
+            <svg data-p-icon="times" class="z-50 absolute top-5 right-5"></svg>
+          } @else {
+            <div>
+              <svg data-p-icon="bars"></svg>
+            </div>
+          }
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="md:hidden fixed inset-0 z-40 bg-white bg-opacity-95 transform transition-all duration-300 ease-out pointer-events-none"
+    [class.translate-x-0]="mobileOpen()"
+    [class.translate-x-full]="!mobileOpen()"
+    [class.opacity-100]="mobileOpen()"
+    [class.opacity-0]="!mobileOpen()"
+    [class.pointer-events-auto]="mobileOpen()"
+  >
+    <div class="absolute inset-0" (click)="closeMenu()"></div>
+
+    <div class="relative flex flex-col items-center justify-center h-full gap-6 p-6 text-center">
+      @for (item of userNavigationItems(); track item.route) {
+        <a
+          [routerLink]="item.route"
+          (click)="closeMenu()"
+          routerLinkActive="text-blue-600"
+          class="capitalize text-2xl text-gray-800 hover:text-blue-600 transition-colors duration-200"
+        >
+          {{ item.label }}
+        </a>
+      }
+    </div>
+  </div>
+</nav>
+<router-outlet />
