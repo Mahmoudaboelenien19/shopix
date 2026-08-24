@@ -6,9 +6,19 @@ import { Heart } from '@primeicons/angular/heart';
 import { ShoppingCart } from '@primeicons/angular/shopping-cart';
 import { Times } from '@primeicons/angular/times';
 import { Bars } from '@primeicons/angular/bars';
+import { LanguageTogglar } from '@app/components/shared/language-togglar/language-togglar';
 
 @Component({
-  imports: [RouterLink, RouterLinkActive, RouterOutlet, Heart, ShoppingCart, Times, Bars],
+  imports: [
+    RouterLink,
+    RouterLinkActive,
+    RouterOutlet,
+    Heart,
+    ShoppingCart,
+    Times,
+    Bars,
+    LanguageTogglar,
+  ],
   selector: 'app-user',
   styleUrl: './user.css',
   templateUrl: './user.html',
